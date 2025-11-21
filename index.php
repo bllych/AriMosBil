@@ -205,7 +205,7 @@
     </div>
   </div>
 
-  <script src="../../Slideshow.js" defer></script>
+  <script src="../../scripthome.js" defer></script>
 </body>
 
 </html>
