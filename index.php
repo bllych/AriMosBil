@@ -1,33 +1,47 @@
+<?php
+require_once 'config.php';
+
+// Fetch 4 courts for homepage cards
+$stmt = $pdo->query("SELECT * FROM courts LIMIT 4");
+$courts = $stmt->fetchAll();
+?>
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-  <title>Home</title>
-  <link rel="stylesheet" href="../Home.css">
+  <title>Home - Basketball Court Booking</title>
+  <link rel="stylesheet" href="Home.css">
+  <link rel="stylesheet" href="assets/css/style.css">
 </head>
 
 <body>
   <!-- Header -->
   <header>
     <div class="logo">
-      <a href="index.php"><img src="../../Gambar/Header Foto/logo.png" /></a>
+      <a href="index.php"><img src="Gambar/Header Foto/logo.png" alt="Logo" /></a>
     </div>
     <div class="search-bar">
-      <img src="../../Gambar/Header Foto/Search.png" alt="Search" />
+      <img src="Gambar/Header Foto/Search.png" alt="Search" />
       <input type="text" placeholder="Search..." />
     </div>
     <div class="lgokanan">
-      <a href=""><img src="../../Gambar/Header Foto/Notif.png" alt="" style="margin-right: 35px" /></a>
-      <a href="/Account/index.php"><img src="../../Gambar/Header Foto/User.png" alt="" /></a>
+      <?php if (isLoggedIn()): ?>
+        <a href="#"><img src="Gambar/Header Foto/Notif.png" alt="Notifications" style="margin-right: 35px" /></a>
+        <a href="logout.php"><img src="Gambar/Header Foto/User.png" alt="Logout" /></a>
+      <?php else: ?>
+        <a href="login.php"><img src="Gambar/Header Foto/User.png" alt="Login" /></a>
+      <?php endif; ?>
     </div>
   </header>
   <hr style="margin-top: 20px" />
   <!-- Navbar -->
   <nav>
-    <a href="../../index.php"> <u>Home</u></a>
-    <a href="#">Status</a>
-    <a href="../../Isi/Coaching.php">Coaching</a>
-    <a href="../../Isi/Amos/Support.php">Support</a>
+    <a href="index.php"> <u>Home</u></a>
+    <a href="pages/courts.php">Courts</a>
+    <a href="pages/coaches.php">Coaches</a>
+    <?php if (isAdmin()): ?>
+      <a href="admin/dashboard.php">Admin</a>
+    <?php endif; ?>
   </nav>
 
   <!-- Main -->
@@ -36,65 +50,34 @@
     <h2>Pontianak</h2>
   </div>
 
-  <!-- Slide show -->
+  <!-- Slide show (markup preserved as requested) -->
   <div class="slideshow-container">
     <div class="slides-wrapper">
-      <div class="slide"><img src="../../Gambar/Slideshow/1.png" alt=""></div>
-      <div class="slide"><img src="../../Gambar/Slideshow/2.png" alt=""></div>
-      <div class="slide"><img src="../../Gambar/Slideshow/3.png" alt=""></div>
+      <div class="slide"><img src="Gambar/Slideshow/1.png" alt="Basketball court 1"></div>
+      <div class="slide"><img src="Gambar/Slideshow/2.png" alt="Basketball court 2"></div>
+      <div class="slide"><img src="Gambar/Slideshow/3.png" alt="Basketball court 3"></div>
     </div>
   </div>
 
   <div class="container">
-    <!-- Kanan Kategory -->
+    <!-- Court Cards -->
     <div class="content">
-      <h2>Showing available courts :</h2>
+      <h2>Featured Courts :</h2>
       <div class="grid">
-        <div class="card">
-          <a href="../../Isi/Pemesanan.php">
-            <img src="Gambar/Lapangan/LAPANGAN_1.png" alt="court" />
-          </a>
-          <div class="info">
-            <p>RBL (Rab Basketball Lab)</p>
-            <p>Gg. Karya Baru Tengah No.10</p>
-            <p>⭐ 4.9</p>
-            <p style="margin-top: 40px">Rp100.000/sesi</p>
+        <?php foreach ($courts as $court): ?>
+          <div class="card">
+            <a href="booking.php?court_id=<?= $court['id'] ?>">
+              <img src="<?= htmlspecialchars($court['image_path']) ?>" alt="<?= htmlspecialchars($court['name']) ?>" />
+            </a>
+            <div class="info">
+              <p><strong><?= htmlspecialchars($court['name']) ?></strong></p>
+              <p><?= htmlspecialchars($court['location']) ?></p>
+              <p>⭐ 4.9</p>
+              <p style="margin-top: 40px"><strong>Rp<?= number_format($court['price'], 0, ',', '.') ?>/sesi</strong></p>
+              <a href="booking.php?court_id=<?= $court['id'] ?>" class="btn btn-primary">Book Now</a>
+            </div>
           </div>
-        </div>
-
-        <div class="card">
-          <img src="Gambar/Lapangan/LAPANGAN_2.png" alt="court" />
-          <div class="info">
-            <p>Brand</p>
-            <p>Lokasi</p>
-            <p>Rate</p>
-            <p style="margin-top: 40px">Harga</p>
-          </div>
-        </div>
-
-        <div class="card">
-          <img src="Gambar/Lapangan/LAPANGAN_3.png" alt="court" />
-          <div class="info">
-            <p>Brand</p>
-            <p>Lokasi</p>
-            <p>Rate</p>
-            <p style="margin-top: 40px">Harga</p>
-          </div>
-        </div>
-      </div>
-      <br /><br />
-      <div class="grid">
-        <div class="card">
-          <img src="Gambar/Lapangan/LAPANGAN_4.png" alt="court" />
-          <div class="info">
-            <p>Brand</p>
-            <p>Lokasi</p>
-            <p>Rate</p>
-            <p style="margin-top: 40px">Harga</p>
-          </div>
-        </div>
-          </div>
-        </div>
+        <?php endforeach; ?>
       </div>
     </div>
   </div>
