@@ -3,8 +3,7 @@
 
 <head>
   <title>Home</title>
-  <link rel="stylesheet" href="../style/Home.css">
-  <link rel="stylesheet" href="../style/Headfoot.css" />
+  <link rel="stylesheet" href="../Home.css">
 </head>
 
 <body>
@@ -47,27 +46,13 @@
   </div>
 
   <div class="container">
-    <!-- Category -->
-    <div class="Category">
-      <h2 style="margin-bottom: 20px">Category :</h2>
-      <p>Indoor</p>
-      <p>Outdoor</p>
-      <p>Semioutdoor</p>
-      <p>Halfcourt</p>
-      <h2 style="margin-bottom: 20px; margin-top: 20px">Price Range :</h2>
-      <p>Rp0 - Rp100.000</p>
-      <p>Rp100.000 - Rp250.000</p>
-      <p>Rp250.000 - Rp500.000</p>
-      <p>Rp500.000+</p>
-    </div>
-
     <!-- Kanan Kategory -->
     <div class="content">
       <h2>Showing available courts :</h2>
       <div class="grid">
         <div class="card">
           <a href="../../Isi/Pemesanan.php">
-            <img src="Gambar/Gambar Home/image 20-1.png" alt="court" />
+            <img src="Gambar/Lapangan/LAPANGAN_1.png" alt="court" />
           </a>
           <div class="info">
             <p>RBL (Rab Basketball Lab)</p>
@@ -78,7 +63,7 @@
         </div>
 
         <div class="card">
-          <img src="Gambar/Gambar Home/image 20-2.png" alt="court" />
+          <img src="Gambar/Lapangan/LAPANGAN_2.png" alt="court" />
           <div class="info">
             <p>Brand</p>
             <p>Lokasi</p>
@@ -88,7 +73,7 @@
         </div>
 
         <div class="card">
-          <img src="Gambar/Gambar Home/image 20-3.png" alt="court" />
+          <img src="Gambar/Lapangan/LAPANGAN_3.png" alt="court" />
           <div class="info">
             <p>Brand</p>
             <p>Lokasi</p>
@@ -100,7 +85,7 @@
       <br /><br />
       <div class="grid">
         <div class="card">
-          <img src="Gambar/Gambar Home/image 20-1.png" alt="court" />
+          <img src="Gambar/Lapangan/LAPANGAN_4.png" alt="court" />
           <div class="info">
             <p>Brand</p>
             <p>Lokasi</p>
@@ -108,24 +93,6 @@
             <p style="margin-top: 40px">Harga</p>
           </div>
         </div>
-
-        <div class="card">
-          <img src="Gambar/Gambar Home/image 20-2.png" alt="court" />
-          <div class="info">
-            <p>Brand</p>
-            <p>Lokasi</p>
-            <p>Rate</p>
-            <p style="margin-top: 40px">Harga</p>
-          </div>
-        </div>
-
-        <div class="card">
-          <img src="Gambar/Gambar Home/image 20-3.png" alt="court" />
-          <div class="info">
-            <p>Brand</p>
-            <p>Lokasi</p>
-            <p>Rate</p>
-            <p style="margin-top: 40px">Harga</p>
           </div>
         </div>
       </div>
