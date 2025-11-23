@@ -40,7 +40,7 @@ $booking_count = $pdo->query("SELECT COUNT(*) FROM bookings WHERE status = 'pend
         <a href="dashboard.php"> <u>Admin</u></a>
     </nav>
 
-    <div class="Lokasi" style="text-align: center; margin: 50px 0;">
+    <div class="Lokasi">
         <h2>Admin Dashboard</h2>
     </div>
 

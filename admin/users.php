@@ -43,7 +43,7 @@ unset($_SESSION['errors']);
         <a href="dashboard.php">Admin</a>
     </nav>
 
-    <div class="Lokasi" style="text-align: center; margin: 50px 0;">
+    <div class="Lokasi">
         <h2>Manage Users</h2>
     </div>
 

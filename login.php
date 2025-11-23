@@ -39,7 +39,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
-    <div class="Lokasi" style="text-align: center; margin: 50px 0;">
+    <div class="Lokasi" style="margin: 30px 0;">
         <h2>Log In</h2>
     </div>
 

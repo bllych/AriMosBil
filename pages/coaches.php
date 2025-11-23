@@ -7,6 +7,7 @@ $coaches = $stmt->fetchAll();
 ?>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,6 +15,7 @@ $coaches = $stmt->fetchAll();
     <link rel="stylesheet" href="../Home.css">
     <link rel="stylesheet" href="../assets/css/style.css">
 </head>
+
 <body>
     <!-- Header -->
     <header>
@@ -44,26 +46,128 @@ $coaches = $stmt->fetchAll();
         <?php endif; ?>
     </nav>
 
-    <div class="Lokasi" style="text-align: center; margin: 50px 0;">
+    <div class="Lokasi">
         <h2>All Coaches</h2>
     </div>
 
-    <div class="container">
+    <!-- <div class="container">
         <div class="content">
-            <div class="grid">
+            <div class="grid" style="display: grid;grid-template-columns: repeat(3, 1fr);gap: 20px;justify-content: center;">
                 <?php foreach ($coaches as $coach): ?>
-                    <div class="card">
-                        <img src="../<?= htmlspecialchars($coach['image_path']) ?>" alt="<?= htmlspecialchars($coach['name']) ?>" />
+                    <div class="card" style="width:300px;">
+                        <img style="height:90%;" src="../<?= htmlspecialchars($coach['image_path']) ?>"
+                            alt="<?= htmlspecialchars($coach['name']) ?>"/>
                         <div class="info">
                             <p><strong><?= htmlspecialchars($coach['name']) ?></strong></p>
                             <p><em><?= htmlspecialchars($coach['specialty']) ?></em></p>
                             <p>⭐ 4.9</p>
-                            <p style="margin-top: 40px"><strong>Rp<?= number_format($coach['price'], 0, ',', '.') ?>/sesi</strong></p>
+                            <p style="margin-top: 40px">
+                                <strong>Rp<?= number_format($coach['price'], 0, ',', '.') ?>/sesi</strong></p>
                         </div>
                     </div>
                 <?php endforeach; ?>
             </div>
         </div>
     </div>
+    </div> -->
+
+
+    <!-- <div class="grids" style="display: grid;grid-template-columns: repeat(3, 1fr);justify-content: center;">
+        <?php foreach ($coaches as $coach): ?>
+            <div class="cards" style="width:300px;display: flex;justify-content: center;">
+                <img style="height:90%;" src="../<?= htmlspecialchars($coach['image_path']) ?>"
+                    alt="<?= htmlspecialchars($coach['name']) ?>" />
+            </div>
+        <?php endforeach; ?>
+    </div> -->
+
+    <div class="grids" style="
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px; /* Jarak 30px antar baris dan kolom */
+">
+        <?php foreach ($coaches as $coach): ?>
+            <div class="cards" style="justify-self: center; width:300px; display: flex; justify-content: center;">
+                <img style="height:90%;" src="../<?= htmlspecialchars($coach['image_path']) ?>"
+                    alt="<?= htmlspecialchars($coach['name']) ?>" />
+            </div>
+        <?php endforeach; ?>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-box">
+            <div class="contact">
+                <h3>Contact Us</h3>
+            </div>
+            <h3>|</h3>
+            <div class="socials">
+                <a href="https://www.instagram.com/"><img src="../../Gambar/Asset/Instagram.png" alt="Instagram" /></a>
+                <a href="https://x.com/"><img src="../../Gambar/Asset/Twitter.png" alt="Twitter" /></a>
+                <a href="https://web.whatsapp.com/"><img src="../../Gambar/Asset/Whatsapp.png" alt="WhatsApp" /></a>
+                <a href="https://www.tiktok.com/id-ID/"><img src="../../Gambar/Asset/Tiktok.png" alt="TikTok" /></a>
+                <a href="https://mail.google.com/mail/u/0/"><img src="../../Gambar/Asset/email.png" alt="Email" /></a>
+                <a href="https://www.youtube.com/watch?v=tL9yDq5hpgI"><img src="../../Gambar/Asset/Phone.png"
+                        alt="Phone" /></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Section Info/Footer Biru -->
+    <div class="all-footer-biru">
+        <div class="footer-biru">
+            <div class="info-section1">
+                <div class="info-box">
+                    <h3>About Us</h3>
+                    <p>Our team</p>
+                    <p style="margin-bottom: 61px">Privacy & Policy</p>
+                </div>
+
+                <div class="info-box">
+                    <h3>Support :</h3>
+                    <p>Help</p>
+                    <p>Feedback</p>
+                </div>
+            </div>
+            <div class="info-section2">
+                <div class="info-box">
+                    <h3>Contact Us :</h3>
+                    <p>+62 813 4609 9722</p>
+                    <p>@username</p>
+                    <p style="margin-bottom: 40px">myemail@gmail.com</p>
+                </div>
+                <div class="info-box">
+                    <h3>Community :</h3>
+                    <p>Twitter</p>
+                    <p>Instagram</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="gambar-info-box">
+            <hhh3>
+                <h3>Payment methods :</h3>
+            </hhh3>
+            <div class="fotopayment">
+                <div class="payments1">
+                    <a href="https://gopay.co.id/"><img src="../../Gambar/Asset/QRIS.png" alt="qris"
+                            style="width: 110px; height: 50px" /></a>
+                    <a href="https://gopay.co.id/"><img src="../../Gambar/Asset/GOPAY.png" alt="gopay"
+                            style="width: 150px; height: 45px" /></a>
+                    <a href="https://gopay.co.id/"><img src="../../Gambar/Asset/MANDIRI.png" alt="mandiri"
+                            style="width: 153px; height: 50px" /></a>
+                </div>
+
+                <div class="payment2">
+                    <a href="https://gopay.co.id/"><img src="../../Gambar/Asset/SHOPEEPAY.png" alt="shopeepay"
+                            style="width: 119px; height: 55px" /></a>
+                    <a href="https://gopay.co.id/"><img src="../../Gambar/Asset/BCA.png" alt="bca"
+                            style="width: 118px; height: 55px" /></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
 </body>
+
 </html>

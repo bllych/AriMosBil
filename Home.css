@@ -48,7 +48,7 @@
 /* Category */
 .container {
   display: flex;
-  align-items: flex-start;
+  justify-content: space-between;
 }
 
 .Category {
@@ -72,12 +72,12 @@
   margin-bottom: 20px;
 }
 
-.grid {
+/* .grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 30px;
   margin-right: 55px;
-}
+} */
 
 .card {
   border: 1px solid #1c34ac;
@@ -120,16 +120,8 @@ header {
   padding-right: 30px;
 }
 
-.logo {
-  display: flex;
-  align-items: center;
-  font-weight: bold;
-  font-size: 18px;
-  color: #002984;
-}
-
 .logo img {
-  height: 60px;
+  height: 90px;
   margin-right: 30px;
 }
 
@@ -167,7 +159,7 @@ header {
 }
 
 .lgokanan img {
-  height: 40px;
+  height: 45px;
 }
 
 /* Navbar */

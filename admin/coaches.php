@@ -12,6 +12,7 @@ unset($_SESSION['errors']);
 ?>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -20,6 +21,7 @@ unset($_SESSION['errors']);
     <link rel="stylesheet" href="../assets/css/style.css">
     <script src="../assets/js/admin-modals.js" defer></script>
 </head>
+
 <body>
     <!-- Header -->
     <header>
@@ -43,7 +45,7 @@ unset($_SESSION['errors']);
         <a href="dashboard.php">Admin</a>
     </nav>
 
-    <div class="Lokasi" style="text-align: center; margin: 50px 0;">
+    <div class="Lokasi">
         <h2>Manage Coaches</h2>
     </div>
 
@@ -59,9 +61,9 @@ unset($_SESSION['errors']);
                 </div>
             <?php endif; ?>
 
-            <button class="btn btn-primary" onclick="openAddModal()">Add New Coach</button>
+            <button class="btn btn-primary" style="margin-bottom:30px;" onclick="openAddModal()">Add New Coach</button>
 
-            <div class="grid">
+            <!-- <div class="grid">
                 <?php foreach ($coaches as $coach): ?>
                     <div class="coach-card">
                         <img src="../<?= htmlspecialchars($coach['image_path']) ?>" alt="<?= htmlspecialchars($coach['name']) ?>" />
@@ -73,6 +75,19 @@ unset($_SESSION['errors']);
                             <button class="btn btn-secondary" onclick="openEditModal(<?= $coach['id'] ?>, '<?= htmlspecialchars($coach['name']) ?>', '<?= htmlspecialchars($coach['specialty']) ?>', <?= $coach['price'] ?>, '<?= htmlspecialchars($coach['image_path']) ?>', '<?= htmlspecialchars($coach['description']) ?>')">Edit</button>
                             <button class="btn btn-secondary" onclick="openTimesModal(<?= $coach['id'] ?>, '<?= htmlspecialchars($coach['name']) ?>')">Manage Times</button>
                         </div>
+                    </div>
+                <?php endforeach; ?>
+            </div> -->
+
+            <div class="grids" style="
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px; /* Jarak 30px antar baris dan kolom */
+">
+                <?php foreach ($coaches as $coach): ?>
+                    <div class="cards" style="justify-self: center; width:300px; display: flex; justify-content: center;">
+                        <img style="height:90%;" src="../<?= htmlspecialchars($coach['image_path']) ?>"
+                            alt="<?= htmlspecialchars($coach['name']) ?>" />
                     </div>
                 <?php endforeach; ?>
             </div>
@@ -189,11 +204,12 @@ unset($_SESSION['errors']);
         }
 
         // Close modal when clicking outside
-        window.onclick = function(event) {
+        window.onclick = function (event) {
             if (event.target.className === 'modal') {
                 event.target.style.display = 'none';
             }
         }
     </script>
 </body>
+
 </html>

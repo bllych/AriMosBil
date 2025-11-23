@@ -111,7 +111,7 @@ $time_slots = $time_slots_stmt->fetchAll(PDO::FETCH_COLUMN);
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
-    <div class="Lokasi" style="text-align: center; margin: 50px 0;">
+    <div class="Lokasi" style="margin: 50px 0;font-align:center;">
         <h2>Book Court: <?= htmlspecialchars($court['name']) ?></h2>
     </div>
 
@@ -138,7 +138,7 @@ $time_slots = $time_slots_stmt->fetchAll(PDO::FETCH_COLUMN);
                 </div>
 
                 <div class="form-group">
-                    <label for="time_slot">Time Slot:</label>
+                    <label for="time_slot" style="">Time Slot:</label>
                     <select id="time_slot" name="time_slot" required>
                         <option value="">Select time slot</option>
                         <?php foreach ($time_slots as $slot): ?>

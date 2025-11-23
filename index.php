@@ -73,7 +73,7 @@ $courts = $stmt->fetchAll();
               <p><strong><?= htmlspecialchars($court['name']) ?></strong></p>
               <p><?= htmlspecialchars($court['location']) ?></p>
               <p>⭐ 4.9</p>
-              <p style="margin-top: 40px"><strong>Rp<?= number_format($court['price'], 0, ',', '.') ?>/sesi</strong></p>
+              <p style="margin-top: 20px;margin-bottom:30px;"><strong>Rp<?= number_format($court['price'], 0, ',', '.') ?>/sesi</strong></p>
               <a href="booking.php?court_id=<?= $court['id'] ?>" class="btn btn-primary">Book Now</a>
             </div>
           </div>
@@ -90,12 +90,12 @@ $courts = $stmt->fetchAll();
       </div>
       <h3>|</h3>
       <div class="socials">
-        <a href="https://www.instagram.com/"><img src="../../Gambar/foto footer/Instagram.png" alt="Instagram" /></a>
-        <a href="https://x.com/"><img src="../../Gambar/foto footer/Twitter.png" alt="Twitter" /></a>
-        <a href="https://web.whatsapp.com/"><img src="../../Gambar/foto footer/Whatsapp.png" alt="WhatsApp" /></a>
-        <a href="https://www.tiktok.com/id-ID/"><img src="../../Gambar/foto footer/Tiktok.png" alt="TikTok" /></a>
-        <a href="https://mail.google.com/mail/u/0/"><img src="../../Gambar/foto footer/email.png" alt="Email" /></a>
-        <a href="https://www.youtube.com/watch?v=tL9yDq5hpgI"><img src="../../Gambar/foto footer/Phone.png" alt="Phone" /></a>
+        <a href="https://www.instagram.com/"><img src="../../Gambar/Asset/Instagram.png" alt="Instagram" /></a>
+        <a href="https://x.com/"><img src="../../Gambar/Asset/Twitter.png" alt="Twitter" /></a>
+        <a href="https://web.whatsapp.com/"><img src="../../Gambar/Asset/Whatsapp.png" alt="WhatsApp" /></a>
+        <a href="https://www.tiktok.com/id-ID/"><img src="../../Gambar/Asset/Tiktok.png" alt="TikTok" /></a>
+        <a href="https://mail.google.com/mail/u/0/"><img src="../../Gambar/Asset/email.png" alt="Email" /></a>
+        <a href="https://www.youtube.com/watch?v=tL9yDq5hpgI"><img src="../../Gambar/Asset/Phone.png" alt="Phone" /></a>
       </div>
     </div>
   </footer>
@@ -137,18 +137,18 @@ $courts = $stmt->fetchAll();
       </hhh3>
       <div class="fotopayment">
         <div class="payments1">
-          <a href="https://gopay.co.id/"><img src="../../Gambar/foto footer/bayar 1.png" alt="qris"
+          <a href="https://gopay.co.id/"><img src="../../Gambar/Asset/QRIS.png" alt="qris"
               style="width: 110px; height: 50px" /></a>
-          <a href="https://gopay.co.id/"><img src="../../Gambar/foto footer/bayar 2.png" alt="gopay"
+          <a href="https://gopay.co.id/"><img src="../../Gambar/Asset/GOPAY.png" alt="gopay"
               style="width: 150px; height: 45px" /></a>
-          <a href="https://gopay.co.id/"><img src="../../Gambar/foto footer/bayar 3.png" alt="mandiri"
+          <a href="https://gopay.co.id/"><img src="../../Gambar/Asset/MANDIRI.png" alt="mandiri"
               style="width: 153px; height: 50px" /></a>
         </div>
 
         <div class="payment2">
-          <a href="https://gopay.co.id/"><img src="../../Gambar/foto footer/bayar 4.png" alt="shopeepay"
+          <a href="https://gopay.co.id/"><img src="../../Gambar/Asset/SHOPEEPAY.png" alt="shopeepay"
               style="width: 119px; height: 55px" /></a>
-          <a href="https://gopay.co.id/"><img src="../../Gambar/foto footer/bayar 5.png" alt="bca"
+          <a href="https://gopay.co.id/"><img src="../../Gambar/Asset/BCA.png" alt="bca"
               style="width: 118px; height: 55px" /></a>
         </div>
       </div>
