@@ -1,6 +1,8 @@
 <?php
 require_once 'config.php';
 
+requireLogin();
+
 // Fetch 4 courts for homepage cards
 $stmt = $pdo->query("SELECT * FROM courts LIMIT 4");
 $courts = $stmt->fetchAll();
@@ -26,6 +28,7 @@ $courts = $stmt->fetchAll();
     </div>
     <div class="lgokanan">
       <?php if (isLoggedIn()): ?>
+        <span style="margin-right: 10px;">Welcome, <?= htmlspecialchars($_SESSION['name']) ?></span>
         <a href="#"><img src="Gambar/Header Foto/Notif.png" alt="Notifications" style="margin-right: 35px" /></a>
         <a href="logout.php"><img src="Gambar/Header Foto/User.png" alt="Logout" /></a>
       <?php else: ?>

@@ -37,10 +37,11 @@ unset($_SESSION['errors']);
     <hr style="margin-top: 20px" />
     <!-- Navbar -->
     <nav>
-        <a href="../index.php">Home</a>
-        <a href="../pages/courts.php">Courts</a>
-        <a href="../pages/coaches.php">Coaches</a>
-        <a href="dashboard.php">Admin</a>
+        <?php $currentPage = basename($_SERVER['PHP_SELF']); ?>
+        <a href="../index.php" class="<?= $currentPage == 'index.php' ? 'active' : '' ?>">Home</a>
+        <a href="../pages/courts.php" class="<?= $currentPage == 'courts.php' ? 'active' : '' ?>">Courts</a>
+        <a href="../pages/coaches.php" class="<?= $currentPage == 'coaches.php' ? 'active' : '' ?>">Coaches</a>
+        <a href="dashboard.php" class="<?= $currentPage == 'dashboard.php' ? 'active' : '' ?>">Admin</a>
     </nav>
 
     <div class="Lokasi">

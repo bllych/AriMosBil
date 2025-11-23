@@ -178,6 +178,11 @@ nav a {
   color: #002984;
 }
 
+nav a.active {
+  text-decoration: underline;
+  color: #1c34ac;
+}
+
 nav:hover {
   text-decoration: #4682b4;
 }
