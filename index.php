@@ -1,8 +1,7 @@
 <?php
 require_once 'config.php';
 
-requireLogin();
-
+// Homepage is now public - no login required
 // Fetch 4 courts for homepage cards
 $stmt = $pdo->query("SELECT * FROM courts LIMIT 4");
 $courts = $stmt->fetchAll();
@@ -26,13 +25,20 @@ $courts = $stmt->fetchAll();
       <img src="Gambar/Header Foto/Search.png" alt="Search" />
       <input type="text" placeholder="Search..." />
     </div>
-    <div class="lgokanan">
+    <div class="header-right">
       <?php if (isLoggedIn()): ?>
-        <span style="margin-right: 10px;">Welcome, <?= htmlspecialchars($_SESSION['name']) ?></span>
-        <a href="#"><img src="Gambar/Header Foto/Notif.png" alt="Notifications" style="margin-right: 35px" /></a>
-        <a href="logout.php"><img src="Gambar/Header Foto/User.png" alt="Logout" /></a>
+        <!-- Logged in user profile -->
+        <div class="user-profile">
+          <img src="Gambar/Header Foto/User.png" alt="User Avatar" class="user-avatar" />
+          <span class="user-name"><?= htmlspecialchars($_SESSION['name']) ?></span>
+          <a href="logout.php" class="btn-logout">Logout</a>
+        </div>
       <?php else: ?>
-        <a href="login.php"><img src="Gambar/Header Foto/User.png" alt="Login" /></a>
+        <!-- Login and Sign Up buttons -->
+        <div class="auth-buttons">
+          <a href="login.php" class="btn-login">Login</a>
+          <a href="signup.php" class="btn-signup">Sign Up</a>
+        </div>
       <?php endif; ?>
     </div>
   </header>
@@ -76,7 +82,8 @@ $courts = $stmt->fetchAll();
               <p><strong><?= htmlspecialchars($court['name']) ?></strong></p>
               <p><?= htmlspecialchars($court['location']) ?></p>
               <p>⭐ 4.9</p>
-              <p style="margin-top: 20px;margin-bottom:30px;"><strong>Rp<?= number_format($court['price'], 0, ',', '.') ?>/sesi</strong></p>
+              <p style="margin-top: 20px;margin-bottom:30px;">
+                <strong>Rp<?= number_format($court['price'], 0, ',', '.') ?>/sesi</strong></p>
               <a href="booking.php?court_id=<?= $court['id'] ?>" class="btn btn-primary">Book Now</a>
             </div>
           </div>

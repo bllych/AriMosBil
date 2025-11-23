@@ -158,6 +158,98 @@ header {
   color: #3366cc;
 }
 
+/* Header Right Section - Auth Buttons and User Profile */
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+/* Auth Buttons (Login & Sign Up) */
+.auth-buttons {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.btn-login,
+.btn-signup {
+  padding: 10px 25px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 14px;
+  transition: all 0.3s ease;
+  display: inline-block;
+}
+
+.btn-login {
+  background-color: transparent;
+  color: #4682b4;
+  border: 2px solid #4682b4;
+}
+
+.btn-login:hover {
+  background-color: #4682b4;
+  color: white;
+}
+
+.btn-signup {
+  background-color: #4682b4;
+  color: white;
+  border: 2px solid #4682b4;
+}
+
+.btn-signup:hover {
+  background-color: #1c34ac;
+  border-color: #1c34ac;
+}
+
+/* User Profile Section (When Logged In) */
+.user-profile {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 8px 15px;
+  background-color: #f0f8ff;
+  border-radius: 25px;
+  border: 2px solid #4682b4;
+}
+
+.user-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #4682b4;
+}
+
+.user-name {
+  font-weight: bold;
+  color: #002984;
+  font-size: 14px;
+  max-width: 150px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.btn-logout {
+  padding: 8px 20px;
+  background-color: #dc3545;
+  color: white;
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: bold;
+  font-size: 13px;
+  transition: background-color 0.3s ease;
+}
+
+.btn-logout:hover {
+  background-color: #c82333;
+}
+
+/* Legacy support - keeping old class for compatibility */
 .lgokanan img {
   height: 45px;
 }
@@ -178,13 +270,15 @@ nav a {
   color: #002984;
 }
 
-nav a.active {
+nav a.active,
+nav a u {
   text-decoration: underline;
   color: #1c34ac;
 }
 
-nav:hover {
-  text-decoration: #4682b4;
+nav a:hover {
+  color: #4682b4;
+  text-decoration: underline;
 }
 
 main {
@@ -392,4 +486,114 @@ footer {
 
 .payments1 img {
   object-fit: contain;
+}
+
+/* Responsive Design for Header */
+@media (max-width: 1024px) {
+  header {
+    flex-wrap: wrap;
+    gap: 15px;
+  }
+
+  .search-bar {
+    width: 100%;
+    order: 3;
+  }
+
+  .header-right {
+    order: 2;
+  }
+}
+
+@media (max-width: 768px) {
+  header {
+    padding: 15px 10px;
+  }
+
+  .logo img {
+    height: 60px;
+  }
+
+  .search-bar {
+    height: 40px;
+    padding: 5px 15px;
+  }
+
+  .search-bar img {
+    width: 20px;
+    height: 20px;
+    margin-right: 15px;
+  }
+
+  .auth-buttons {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .btn-login,
+  .btn-signup {
+    padding: 8px 20px;
+    font-size: 12px;
+  }
+
+  .user-profile {
+    padding: 6px 10px;
+    gap: 8px;
+  }
+
+  .user-avatar {
+    width: 35px;
+    height: 35px;
+  }
+
+  .user-name {
+    font-size: 12px;
+    max-width: 100px;
+  }
+
+  .btn-logout {
+    padding: 6px 15px;
+    font-size: 12px;
+  }
+
+  nav {
+    gap: 20px;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .logo img {
+    height: 50px;
+  }
+
+  .auth-buttons {
+    width: 100%;
+  }
+
+  .btn-login,
+  .btn-signup {
+    width: 100%;
+    text-align: center;
+  }
+
+  .user-profile {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .user-name {
+    width: 100%;
+    text-align: center;
+    max-width: none;
+  }
+
+  nav {
+    flex-wrap: wrap;
+    gap: 15px;
+  }
+
+  nav a {
+    font-size: 13px;
+  }
 }

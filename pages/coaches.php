@@ -26,12 +26,20 @@ $coaches = $stmt->fetchAll();
             <img src="../Gambar/Header Foto/Search.png" alt="Search" />
             <input type="text" placeholder="Search..." />
         </div>
-        <div class="lgokanan">
+        <div class="header-right">
             <?php if (isLoggedIn()): ?>
-                <a href="#"><img src="../Gambar/Header Foto/Notif.png" alt="Notifications" style="margin-right: 35px" /></a>
-                <a href="../logout.php"><img src="../Gambar/Header Foto/User.png" alt="Logout" /></a>
+                <!-- Logged in user profile -->
+                <div class="user-profile">
+                    <img src="../Gambar/Header Foto/User.png" alt="User Avatar" class="user-avatar" />
+                    <span class="user-name"><?= htmlspecialchars($_SESSION['name']) ?></span>
+                    <a href="../logout.php" class="btn-logout">Logout</a>
+                </div>
             <?php else: ?>
-                <a href="../login.php"><img src="../Gambar/Header Foto/User.png" alt="Login" /></a>
+                <!-- Login and Sign Up buttons -->
+                <div class="auth-buttons">
+                    <a href="../login.php" class="btn-login">Login</a>
+                    <a href="../signup.php" class="btn-signup">Sign Up</a>
+                </div>
             <?php endif; ?>
         </div>
     </header>
