@@ -118,7 +118,7 @@ $time_slots = $time_slots_stmt->fetchAll(PDO::FETCH_COLUMN);
     <div class="booking-form">
         <?php if ($success): ?>
             <div class="alert alert-success">
-                Booking successful! Your booking is pending confirmation.
+                Booking successful!
             </div>
         <?php elseif (!empty($errors)): ?>
             <div class="alert alert-error">

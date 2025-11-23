@@ -67,7 +67,7 @@ unset($_SESSION['errors']);
                 </div>
             <?php endif; ?>
 
-            <button class="btn btn-primary" onclick="openAddModal()">Add New Booking</button>
+            <button class="btn btn-primary" style="margin-bottom:30px;" onclick="openAddModal()">Add New Booking</button>
 
             <table class="admin-table">
                 <thead>

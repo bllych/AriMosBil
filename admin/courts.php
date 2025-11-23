@@ -43,11 +43,11 @@ unset($_SESSION['errors']);
         <a href="dashboard.php">Admin</a>
     </nav>
 
-    <div class="Lokasi">
+    <div class="Lokasi" >
         <h2>Manage Courts</h2>
     </div>
 
-    <div class="container">
+    <div class="container" >
         <div class="content">
             <?php if (!empty($errors)): ?>
                 <div class="alert alert-error">
@@ -59,7 +59,7 @@ unset($_SESSION['errors']);
                 </div>
             <?php endif; ?>
 
-            <button class="btn btn-primary" onclick="openAddModal()">Add New Court</button>
+            <button class="btn btn-primary" style="margin-bottom:30px;" onclick="openAddModal()">Add New Court</button>
 
             <div class="grid">
                 <?php foreach ($courts as $court): ?>

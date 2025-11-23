@@ -46,7 +46,7 @@ $booking_count = $pdo->query("SELECT COUNT(*) FROM bookings WHERE status = 'pend
 
     <div class="container">
         <div class="content">
-            <h3>Quick Stats</h3>
+            <h3 style="margin-bottom:10px;">Quick Stats</h3>
             <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin-bottom: 30px;">
                 <div style="border: 2px solid #4682b4; padding: 20px; border-radius: 10px; text-align: center;">
                     <h4>Total Users</h4>
@@ -66,7 +66,7 @@ $booking_count = $pdo->query("SELECT COUNT(*) FROM bookings WHERE status = 'pend
                 </div>
             </div>
 
-            <h3>Management</h3>
+            <h3 style="margin-bottom:10px;">Management</h3>
             <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px;">
                 <a href="users.php" class="btn btn-primary" style="text-align: center; padding: 20px; text-decoration: none;">Manage Users</a>
                 <a href="courts.php" class="btn btn-primary" style="text-align: center; padding: 20px; text-decoration: none;">Manage Courts</a>
